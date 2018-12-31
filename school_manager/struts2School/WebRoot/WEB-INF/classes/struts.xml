@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="struts" extends="struts-default" namespace="/user">
+		<action name="*_*" class="com.struts.action.{1}Action" method="{2}">
+			<result>/{1}/{1}_{2}_success.jsp</result>
+			<result name="error">/{1}/error.jsp</result>
+			<result name="indexTeacher">/{1}/{1}_log_success.jsp</result>
+		</action>
+		
+		<action name="Teacher_*" class="com.struts.action.TeacherAction" method="excamUploadOrDeleteTestServlet">
+			<result name="exam_newPageUpdateChoose1">/Teacher/exam_newPageUpdateChoose1.jsp</result>
+			<result name="exam_newPageUpdateChoose2">/Teacher/exam_newPageUpdateChoose2.jsp</result>
+			<result name="exam_newPageUpdateText">/Teacher/exam_newPageUpdateText.jsp</result>
+		</action>
+		
+	</package>
+</struts>
